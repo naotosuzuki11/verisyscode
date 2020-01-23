@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  address_1_line_1: MyString
+  address_1_line_2: MyString
+  address_1_city: MyString
+  address_1_state: MyString
+  address_1_zip: MyString
+  address_2_line_1: MyString
+  address_2_line_2: MyString
+  address_2_city: MyString
+  address_2_state: MyString
+  address_2_zip: MyString
+  phone_1_number: MyString
+  phone_1_type: MyString
+  phone_2_number: MyString
+  phone_2_type: MyString
+  phone_3_number: MyString
+  phone_3_type: MyString
+  license_number: 1
+  last_update_date: 2020-01-23
+  valid_license: false
+  duplicate_license: false
+
+two:
+  first_name: MyString
+  middle_name: MyString
+  last_name: MyString
+  address_1_line_1: MyString
+  address_1_line_2: MyString
+  address_1_city: MyString
+  address_1_state: MyString
+  address_1_zip: MyString
+  address_2_line_1: MyString
+  address_2_line_2: MyString
+  address_2_city: MyString
+  address_2_state: MyString
+  address_2_zip: MyString
+  phone_1_number: MyString
+  phone_1_type: MyString
+  phone_2_number: MyString
+  phone_2_type: MyString
+  phone_3_number: MyString
+  phone_3_type: MyString
+  license_number: 1
+  last_update_date: 2020-01-23
+  valid_license: false
+  duplicate_license: false

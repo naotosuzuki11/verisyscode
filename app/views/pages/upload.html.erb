@@ -1,0 +1,7 @@
+test
+
+<h3>Import Contacts</h3>
+<%= form_tag import_vandelay_contacts_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Contacts" %>
+<% end %>

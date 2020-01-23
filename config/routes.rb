@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+  resources :vandelay_contacts do
+    collection { post :import }
+  end
+
+  root to: 'pages#home'
+  get 'upload', to: 'pages#upload', as: :upload
+  get 'review', to: 'pages#review', as: :review
+
+
 end

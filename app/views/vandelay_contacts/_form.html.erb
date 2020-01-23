@@ -1,0 +1,132 @@
+<%= form_with(model: vandelay_contact, local: true) do |form| %>
+  <% if vandelay_contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vandelay_contact.errors.count, "error") %> prohibited this vandelay_contact from being saved:</h2>
+
+      <ul>
+      <% vandelay_contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :middle_name %>
+    <%= form.text_field :middle_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_1_line_1 %>
+    <%= form.text_field :address_1_line_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_1_line_2 %>
+    <%= form.text_field :address_1_line_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_1_city %>
+    <%= form.text_field :address_1_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_1_state %>
+    <%= form.text_field :address_1_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_1_zip %>
+    <%= form.text_field :address_1_zip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_2_line_1 %>
+    <%= form.text_field :address_2_line_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_2_line_2 %>
+    <%= form.text_field :address_2_line_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_2_city %>
+    <%= form.text_field :address_2_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_2_state %>
+    <%= form.text_field :address_2_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_2_zip %>
+    <%= form.text_field :address_2_zip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_1_number %>
+    <%= form.text_field :phone_1_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_1_type %>
+    <%= form.text_field :phone_1_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_2_number %>
+    <%= form.text_field :phone_2_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_2_type %>
+    <%= form.text_field :phone_2_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_3_number %>
+    <%= form.text_field :phone_3_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_3_type %>
+    <%= form.text_field :phone_3_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license_number %>
+    <%= form.number_field :license_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_update_date %>
+    <%= form.date_select :last_update_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valid_license %>
+    <%= form.check_box :valid_license %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duplicate_license %>
+    <%= form.check_box :duplicate_license %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
