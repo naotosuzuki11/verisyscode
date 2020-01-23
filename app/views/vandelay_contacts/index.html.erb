@@ -1,0 +1,78 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vandelay Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Last name</th>
+      <th>Address 1 line 1</th>
+      <th>Address 1 line 2</th>
+      <th>Address 1 city</th>
+      <th>Address 1 state</th>
+      <th>Address 1 zip</th>
+      <th>Address 2 line 1</th>
+      <th>Address 2 line 2</th>
+      <th>Address 2 city</th>
+      <th>Address 2 state</th>
+      <th>Address 2 zip</th>
+      <th>Phone 1 number</th>
+      <th>Phone 1 type</th>
+      <th>Phone 2 number</th>
+      <th>Phone 2 type</th>
+      <th>Phone 3 number</th>
+      <th>Phone 3 type</th>
+      <th>License number</th>
+      <th>Last update date</th>
+      <th>Valid license</th>
+      <th>Duplicate license</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vandelay_contacts.each do |vandelay_contact| %>
+      <tr>
+        <td><%= vandelay_contact.first_name %></td>
+        <td><%= vandelay_contact.middle_name %></td>
+        <td><%= vandelay_contact.last_name %></td>
+        <td><%= vandelay_contact.address_1_line_1 %></td>
+        <td><%= vandelay_contact.address_1_line_2 %></td>
+        <td><%= vandelay_contact.address_1_city %></td>
+        <td><%= vandelay_contact.address_1_state %></td>
+        <td><%= vandelay_contact.address_1_zip %></td>
+        <td><%= vandelay_contact.address_2_line_1 %></td>
+        <td><%= vandelay_contact.address_2_line_2 %></td>
+        <td><%= vandelay_contact.address_2_city %></td>
+        <td><%= vandelay_contact.address_2_state %></td>
+        <td><%= vandelay_contact.address_2_zip %></td>
+        <td><%= vandelay_contact.phone_1_number %></td>
+        <td><%= vandelay_contact.phone_1_type %></td>
+        <td><%= vandelay_contact.phone_2_number %></td>
+        <td><%= vandelay_contact.phone_2_type %></td>
+        <td><%= vandelay_contact.phone_3_number %></td>
+        <td><%= vandelay_contact.phone_3_type %></td>
+        <td><%= vandelay_contact.license_number %></td>
+        <td><%= vandelay_contact.last_update_date %></td>
+        <td><%= vandelay_contact.valid_license %></td>
+        <td><%= vandelay_contact.duplicate_license %></td>
+        <td><%= link_to 'Show', vandelay_contact %></td>
+        <td><%= link_to 'Edit', edit_vandelay_contact_path(vandelay_contact) %></td>
+        <td><%= link_to 'Destroy', vandelay_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<h3>Import Contacts</h3>
+<%= form_tag import_vandelay_contacts_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Contacts" %>
+<% end %>
+
+<%= link_to 'New Vandelay Contact', new_vandelay_contact_path %>
