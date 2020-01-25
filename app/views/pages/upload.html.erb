@@ -1,7 +1,12 @@
-test
-
-<h3>Import Contacts</h3>
-<%= form_tag import_vandelay_contacts_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Upload Contacts" %>
-<% end %>
+<div class="container">
+ <h1 class="text-center">Upload Contacts</h1>
+  <div class="center-upload">
+   <%= form_tag import_vandelay_contacts_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Upload Contacts", class: 'btn-green' %>
+   <% end %>
+  </div>
+  <div class="footer">
+    <h5>Made by Naoto Suzuki</h5>
+  </div>
+</div>

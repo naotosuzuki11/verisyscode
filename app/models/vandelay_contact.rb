@@ -26,10 +26,8 @@ class VandelayContact < ApplicationRecord
         last_update_date: row[20]
       }
 
-      contact = VandelayContact.upsert(license_number: contactinfo[:license_number])
 
-
-      # contact = VandelayContact.create!(contactinfo)
+      contact = VandelayContact.create!(contactinfo)
 
 
       if contact.license_number == nil
@@ -47,7 +45,9 @@ class VandelayContact < ApplicationRecord
       end
 
       numberone = contact.phone_1_number.to_s
-      raise
+      numbertwo = contact.phone_2_number.to_s
+      numberthree = contact.phone_3_number.to_s
+
 
       if numberone.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)
         x = $1
@@ -57,7 +57,6 @@ class VandelayContact < ApplicationRecord
         contact.save!
       end
 
-      numbertwo = contact.phone_2_number.to_s
 
       if numbertwo.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)
         x = $1
@@ -67,7 +66,6 @@ class VandelayContact < ApplicationRecord
         contact.save!
       end
 
-      numberthree = contact.phone_3_number.to_s
 
       if numberthree.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)
         x = $1
@@ -77,7 +75,6 @@ class VandelayContact < ApplicationRecord
         contact.save!
       end
 
-      if VandelayContact.all
 
 
 
