@@ -1,7 +1,9 @@
 class VandelayContact < ApplicationRecord
-  has_many :join_addresses, dependent: :destroy
+  has_many :join_addresses
+  # , dependent: :destroy
   has_many :addresses, through: :join_addresses
-  has_many :join_numbers, dependent: :destroy
+  has_many :join_numbers
+  # , dependent: :destroy
   has_many :numbers, through: :join_numbers
 
 
@@ -9,7 +11,7 @@ class VandelayContact < ApplicationRecord
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      contactinfo = {
+      allinfo = {
         first_name: row[0],
         middle_name: row[1],
         last_name: row[2],
@@ -33,7 +35,7 @@ class VandelayContact < ApplicationRecord
         last_update_date: row[20]
       }
 
-      contact = VandelayContact.create!(contactinfo)
+      contact = VandelayContact.create!(allinfo)
 
       # validate license number
       if contact.license_number == nil
@@ -49,6 +51,7 @@ class VandelayContact < ApplicationRecord
         contact.valid_license = true
         contact.save!
       end
+
 
       # standardize phone number format
       numberone = contact.phone_1_number.to_s
@@ -106,10 +109,30 @@ class VandelayContact < ApplicationRecord
             phone_3_type: contact.phone_3_type
           }
 
+          addressinfo = {
+            address_1_line_1:contact.address_1_line_1,
+            address_1_line_2:contact.address_1_line_2,
+            address_1_city:contact.address_1_city,
+            address_1_state:contact.address_1_state,
+            address_1_zip:contact.address_1_zip,
+            address_2_line_1:contact.address_2_line_1,
+            address_2_line_2:contact.address_2_line_2,
+            address_2_city:contact.address_2_city,
+            address_2_state:contact.address_2_state,
+            address_2_zip:contact.address_2_zip,
+          }
+
         mastercontact = VandelayContact.where(license_number: contact.license_number).order(last_update_date: :asc).first
         numbers_to_be_merged = Number.create!(numberinfo)
-        NumbersVandelayContact.create!(Number: numbers_to_be_merged, VandelayContact: mastercontact)
+        address_to_be_merged = Address.create!(addressinfo)
         raise
+        JoinAddress.create!(VandelayContact: mastercontact, Address: address_to_be_merged)
+        raise
+
+
+
+
+
 
         end
 
