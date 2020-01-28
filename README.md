@@ -12,19 +12,19 @@ https://github.com/naotosuzuki11/verisyscode.git
 Thanks for the opportunity to build this! I almost wished I had more time to complete this as if it was a real project for work.
 
 
-• Overview of the process you used and the technologies you used
+# Overview of the process you used and the technologies you used
   My goal was to write clean/simple code to each of the checkpoints asked for by the assessment, to showcase my comfort within rails and writing ruby. Most of the application is built using basic rails. The only gem I installed was axlsx for the CSV export. 
   
-• Any challenges you faced
+# Any challenges you faced
   Challenge #1. Looking at the prompt I initially only created one model to keep things simple, which was VandelayContact. However, I realized that the best way to combine records and append to the master record (latest update-date) would be to create a new Number and Address Model. I kept them separate because I thought it may be best for sustainability. Each Model belongs to an instance of VandelayContact. 
   
   Challenge #2. I usually really enjoy front end work and care about making sure pages are all responsive and follow good front end practices. I enjoy scalable UI with good components. However, after realizing I had already spent a good amount of time on the project I had to be scrappy and create a few front-end pages with terrible front-end code. Wasn't happy to do it but it does work and I wanted to make sure your team could test the easily. 
 
-• Questions or assumptions you made
+# Questions or assumptions you made
   I had to make assumptions for this project to complete it in a timely manner. The app assumes that users know what it is for, and knows what template should be used to import. It also assumes that the exact same file won't be uploaded over and over. It does work and the final list tests for duplicates, but it can make unnecessary merged records. 
 
 
-• Next steps to finish the challenge
+# Next steps to finish the challenge
   If I had all the time in the world there would be a lot of cool features I'd love to work on!
   
   Maine step I'd do next: 
@@ -38,11 +38,11 @@ Thanks for the opportunity to build this! I almost wished I had more time to com
   - write tests 
   - complete "docker-izing" 
   
-• Feedback on the challenge itself
+# Feedback on the challenge itself
   - I had fun using rails and ruby (my current role I use django and python) and remembered how valuable it is to use different technologies to learn best development practices. I was a little frustrated with the amount of time it took, but I am very excited at the prospect of Verisys. I know the assessment instructs spending 2-3 hours but I probably spent double that to refactor code and make sure I felt comfortable submitting this to be assessed. For a very basic web app I struggled finding balance in what I should do to make it work / what I can do. 
 
 
-• JSON Output from the 3 samples that you ingest
+# JSON Output from the 3 samples that you ingest
   Link to access the validated / merged contacts below. 
   https://verisyscode.herokuapp.com/vandelay_contacts.json
 
