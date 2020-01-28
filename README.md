@@ -36,9 +36,10 @@ Thanks for the opportunity to build this! I almost wished I had more time to com
   - create logging in so multiple users can use the app and have security but also the ability to share. 
   - write tests 
   - complete "docker-izing" 
+  - include a searchbar
   
 ### Feedback on the challenge itself
-  - I had fun using rails and ruby (my current role I use django and python) and remembered how valuable it is to use different technologies to learn best development practices. I was a little frustrated with the amount of time it took, but I am very excited at the prospect of Verisys. I know the assessment instructs spending 2-3 hours but I probably spent double that to refactor code and make sure I felt comfortable submitting this to be assessed. For a very basic web app I struggled finding balance in what I should do to make it work / what I can do. 
+  - I had fun using rails and ruby (my current role I use django and python) and remembered how valuable it is to use different technologies to learn best development practices. I was a little frustrated with the amount of time it took, but I am very excited at the prospect of Verisys. I know the assessment instructs spending 2-3 hours but I spent double that to refactor code and make sure I felt comfortable submitting this to be assessed. For a very basic web app I struggled finding balance in what I should do to make it work / what I can do. 
 
 
 ### JSON Output from the 3 samples that you ingest
