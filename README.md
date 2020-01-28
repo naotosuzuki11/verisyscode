@@ -7,7 +7,6 @@ The [View page](https://verisyscode.herokuapp.com/review) should be empty the fi
 You can clone the repo here.
 ```shell
 https://github.com/naotosuzuki11/verisyscode.git
-cd project
 ```
 
 Thanks for the opportunity to build this! I almost wished I had more time to complete this as if it was a real project for work.
