@@ -1,11 +1,55 @@
-<%= @all.count %>
-<%= @valid.count %> have been added
-<%= @notvalid.count %> records have been removed
-
-<div class="container">
- <h1 class="text-center">View Contacts</h1>
-
-  <div class="footer">
+<div class="alert alert-primary alert-width" role="alert">
+    <strong>Upload Summary</strong><br>
+    <%= @all_contacts.count %> total records have been uploaded<br>
+    <%= @valid_license_contacts.count %> records have valid numbers <br>
+    <%= @not_valid_license_contacts.count %> records have invalid numbers<br>
+    <%= Address.count %> total merged and appended phone number / address information<br>
+    <%= @approved_contacts.count %> total valid/unique contacts that can be viewed and downloaded... <br>
+</div>
+<div>
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <div class="left-bar">
+                <div class="mb-4 mt-4">
+                    <%= link_to 'Home', root_path, class: 'btn-green' %>
+                </div>
+                <div class="mb-4 mt-3">
+                    <%= link_to 'Upload another file', upload_path, class: 'btn-green' %>
+                </div>
+                <div class="mb-4 mt-3">
+                    <%= link_to 'Export excel file', csv_export_path(format: :xlsx), class: 'btn-green' %>
+                </div>
+                <div class="mb-4 mt-3">
+                    <%= link_to 'JSON view', "vandelay_contacts.json", class: 'btn-green' %>
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <h1>View Contacts</h1>
+            <div class="row">
+                <% @approved_contacts.each do |contact| %>
+                <div class="col-sm-3">
+                    <div class="contact-card">
+                        <%= link_to vandelay_contact_path(contact), class: 'contact-card' do %>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= contact.full_name %>
+                            </h5>
+                            <p class="card-text"> #
+                                <%= contact.license_number %>
+                            </p>
+                            <p class="card-text"> Updated:
+                                <%= contact.last_update_date %>
+                            </p>
+                        </div>
+                        <% end  %>
+                    </div>
+                </div>
+                <% end  %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-home">
     <h5>Made by Naoto Suzuki</h5>
-  </div>
 </div>

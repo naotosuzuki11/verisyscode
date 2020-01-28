@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
-  get 'upload', to: 'pages#upload', as: :upload
-  get 'review', to: 'pages#review', as: :review
+  get '/upload', to: 'pages#upload', as: :upload
+  get '/review', to: 'pages#review', as: :review
+  get '/csv_export', to: 'vandelay_contacts#csv_export'
 
 
 end

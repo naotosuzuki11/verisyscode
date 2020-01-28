@@ -4,7 +4,23 @@ class VandelayContactsController < ApplicationController
   # GET /vandelay_contacts
   # GET /vandelay_contacts.json
   def index
-    @vandelay_contacts = VandelayContact.all
+    @vandelay_contacts = VandelayContact.where(valid_license: true).where(merged_record: false)
+  end
+
+  def csv_export
+    @vandelay_contacts = VandelayContact.where(valid_license: true).where(merged_record: false)
+
+    respond_to do |format|
+      format.xlsx {
+        response.headers[
+          'Content-Disposition'
+        ] = "attachment; filename=verisys_assessment_export.xlsx"
+      }
+      format.html { render :csv_export }
+    end
+
+
+
   end
 
   # GET /vandelay_contacts/1
@@ -67,13 +83,13 @@ class VandelayContactsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vandelay_contact
-      @vandelay_contact = VandelayContact.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_vandelay_contact
+    @vandelay_contact = VandelayContact.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def vandelay_contact_params
-      params.require(:vandelay_contact).permit(:first_name, :middle_name, :last_name, :address_1_line_1, :address_1_line_2, :address_1_city, :address_1_state, :address_1_zip, :address_2_line_1, :address_2_line_2, :address_2_city, :address_2_state, :address_2_zip, :phone_1_number, :phone_1_type, :phone_2_number, :phone_2_type, :phone_3_number, :phone_3_type, :license_number, :last_update_date, :valid_license, :duplicate_license)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def vandelay_contact_params
+    params.require(:vandelay_contact).permit(:first_name, :middle_name, :last_name, :address_1_line_1, :address_1_line_2, :address_1_city, :address_1_state, :address_1_zip, :address_2_line_1, :address_2_line_2, :address_2_city, :address_2_state, :address_2_zip, :phone_1_number, :phone_1_type, :phone_2_number, :phone_2_type, :phone_3_number, :phone_3_type, :license_number, :last_update_date, :valid_license, :duplicate_license)
+  end
 end

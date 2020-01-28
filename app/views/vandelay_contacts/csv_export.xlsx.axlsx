@@ -1,0 +1,22 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Vandelay Contacts") do |sheet|
+
+  sheet.add_row ["Total contacts after validating and merging:", @vandelay_contacts.count ]
+  sheet.add_row ["Downloaded at", Time.now.strftime("%b %-d, %Y")]
+  sheet.add_row []
+
+  sheet.add_row ["First Name", "Middle Name", "Last Name", "Address 1 line 1", "Address 1 line 2", "Address 1 city", "Address 1 state", "Address 1 zip", "Address 2 line 1", "Address 2 line 2", "Address 2 city", "Address 2 state", "Address 2 zip", "Phone 1 number", "Phone 1 type", "Phone 2 number", "Phone 2 type", "Phone 3 number", "Phone 3 type", "License number", "Last update date" ]
+
+  @vandelay_contacts.each do |contact|
+    sheet.add_row [contact.first_name, contact.middle_name, contact.last_name, contact.address_1_line_1, contact.address_1_line_2, contact.address_1_city, contact.address_1_state, contact.address_1_zip, contact.address_2_line_1, contact.address_2_line_2, contact.address_2_city, contact.address_2_state, contact.address_2_zip, contact.phone_1_number, contact.phone_1_type, contact.phone_2_number, contact.phone_2_type, contact.phone_3_number, contact.phone_3_type, contact.license_number, contact.last_update_date ]
+  end
+
+end
+
+
+
+
+
+
+

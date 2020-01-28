@@ -11,6 +11,7 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :address_2_city
       t.string :address_2_state
       t.string :address_2_zip
+      t.references :vandelay_contact, foreign_key: true
 
       t.timestamps
     end

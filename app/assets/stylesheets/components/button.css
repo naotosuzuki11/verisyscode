@@ -6,11 +6,68 @@
   margin-right: 20px;
   color: white;
   font-size: 16px;
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
 .btn-green:hover {
+  background: #8CFF36;
+  color: #62B527;
+}
+
+.btn-green-home {
+  padding: 8px 24px;
+  border-radius: 8px;
+  background: #73BA32;
+  transition: background 0.3s ease;
+  margin-right: 20px;
+  color: white;
+  font-size: 16px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.btn-green-home:hover {
   background: white;
   color: #73BA32;
+}
+
+
+.contact-card {
+  height: 18vh;
+  background-color: #FCFCFC;
+  margin-bottom: 4vh;
+  padding-top: 2px;
+  margin-bottom: 2vh;
+  width: 18vw;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.contact-card:link {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-card:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #62B126;
+}
+
+.summary-card {
+  text-align: center;
+  width: 40vw;
+  background-color: red;
+}
+
+
+.left-bar {
+  border-right: 5px solid #73BA32;
+}
+
+.no-decoration {
+  text-decoration: none;
 }
 
 

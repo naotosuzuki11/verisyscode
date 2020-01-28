@@ -22,8 +22,10 @@ class CreateVandelayContacts < ActiveRecord::Migration[5.2]
       t.string :phone_3_type
       t.integer :license_number, :limit => 8
       t.date :last_update_date
-      t.boolean :valid_license
-      t.boolean :duplicate_license
+      t.boolean :valid_license, :default => true
+      t.boolean :duplicate_license, :default => true
+      t.boolean :merged_record, :default => false
+
 
       t.timestamps
     end

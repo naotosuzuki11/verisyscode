@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_075056) do
+ActiveRecord::Schema.define(version: 2020_01_26_074641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,26 +26,10 @@ ActiveRecord::Schema.define(version: 2020_01_26_075056) do
     t.string "address_2_city"
     t.string "address_2_state"
     t.string "address_2_zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "join_addresses", force: :cascade do |t|
-    t.bigint "address_id"
     t.bigint "vandelay_contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_join_addresses_on_address_id"
-    t.index ["vandelay_contact_id"], name: "index_join_addresses_on_vandelay_contact_id"
-  end
-
-  create_table "join_numbers", force: :cascade do |t|
-    t.bigint "number_id"
-    t.bigint "vandelay_contact_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["number_id"], name: "index_join_numbers_on_number_id"
-    t.index ["vandelay_contact_id"], name: "index_join_numbers_on_vandelay_contact_id"
+    t.index ["vandelay_contact_id"], name: "index_addresses_on_vandelay_contact_id"
   end
 
   create_table "numbers", force: :cascade do |t|
@@ -55,8 +39,10 @@ ActiveRecord::Schema.define(version: 2020_01_26_075056) do
     t.string "phone_2_type"
     t.string "phone_3_number"
     t.string "phone_3_type"
+    t.bigint "vandelay_contact_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["vandelay_contact_id"], name: "index_numbers_on_vandelay_contact_id"
   end
 
   create_table "vandelay_contacts", force: :cascade do |t|
@@ -81,14 +67,13 @@ ActiveRecord::Schema.define(version: 2020_01_26_075056) do
     t.string "phone_3_type"
     t.bigint "license_number"
     t.date "last_update_date"
-    t.boolean "valid_license"
-    t.boolean "duplicate_license"
+    t.boolean "valid_license", default: true
+    t.boolean "duplicate_license", default: true
+    t.boolean "merged_record", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "join_addresses", "addresses"
-  add_foreign_key "join_addresses", "vandelay_contacts"
-  add_foreign_key "join_numbers", "numbers"
-  add_foreign_key "join_numbers", "vandelay_contacts"
+  add_foreign_key "addresses", "vandelay_contacts"
+  add_foreign_key "numbers", "vandelay_contacts"
 end

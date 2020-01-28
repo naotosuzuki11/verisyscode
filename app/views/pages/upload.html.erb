@@ -1,12 +1,13 @@
 <div class="container">
- <h1 class="text-center">Upload Contacts</h1>
-  <div class="center-upload">
-   <%= form_tag import_vandelay_contacts_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Upload Contacts", class: 'btn-green' %>
-   <% end %>
-  </div>
-  <div class="footer">
-    <h5>Made by Naoto Suzuki</h5>
-  </div>
+    <h1 class="text-center">Upload Contacts</h1>
+    <h5 class="text-center">Please make sure your csv file follows a standard format for the last date column.</h5>
+    <div class="center-upload">
+        <%= form_tag import_vandelay_contacts_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Upload Contacts", class: 'btn-green' %>
+        <% end %>
+    </div>
+    <div class="footer">
+        <h5>Made by Naoto Suzuki</h5>
+    </div>
 </div>
