@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     @all_contacts = VandelayContact.all
 
     @all_contacts.each do |contact|
-      validate_license_number(contact)
+      validate_license_number?(contact)
       format_phone_numbers(contact)
       if VandelayContact.where(license_number: contact.license_number).having("count(license_number) > 1").exists?
         merge_contacts(contact)
@@ -29,7 +29,7 @@ class PagesController < ApplicationController
 
   private
 
-  def validate_license_number(contact)
+  def validate_license_number?(contact)
     if contact.license_number == nil
       contact.valid_license = false
       contact.save!
@@ -102,7 +102,7 @@ class PagesController < ApplicationController
     master_contact = VandelayContact.where(license_number: contact.license_number).order(last_update_date: :desc).first
 
 
-    if master_contact != contact
+    unless master_contact == contact
       if Address.where(addressinfo).exists? && Number.where(numberinfo).exists?
         contact.merged_record = true
         contact.save!

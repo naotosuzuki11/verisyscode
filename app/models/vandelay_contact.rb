@@ -40,34 +40,3 @@ class VandelayContact < ApplicationRecord
 
 end
 
-
-# standardize phone number format
-# numberone = contact.phone_1_number.to_s
-# numbertwo = contact.phone_2_number.to_s
-# numberthree = contact.phone_3_number.to_s
-
-# if numberone.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)
-#   x = $1
-#   y = $2
-#   z = $3
-#   contact.phone_1_number = "(#{x})-#{y}-#{z}"
-#   contact.save!
-# end
-
-
-# if numbertwo.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)
-#   x = $1
-#   y = $2
-#   z = $3
-#   contact.phone_2_number = "(#{x})-#{y}-#{z}"
-#   contact.save!
-# end
-
-
-# if numberthree.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)
-#   x = $1
-#   y = $2
-#   z = $3
-#   contact.phone_3_number = "(#{x})-#{y}-#{z}"
-#   contact.save!
-# end
