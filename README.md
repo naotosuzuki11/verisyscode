@@ -36,7 +36,7 @@ Thanks for the opportunity to build this! I almost wished I had more time to com
   - devise - create logging in so multiple users can use the app and have security but also the ability to share
   - simple form to log new entries without csv import
   - pundit could be fun to add if the app was more comprehensive and had different types of users
-  - write tests 
+  - use rspec and capybara to test each step together.
   - complete "docker-izing" 
   - include a searchbar
   
