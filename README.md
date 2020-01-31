@@ -13,7 +13,7 @@ Thanks for the opportunity to build this! I almost wished I had more time to com
 
 
 ### Overview of the process you used and the technologies you used
-  My goal was to write clean/simple code to complete each of the checkpoints asked for by the assessment. Most of the application is built using basic rails with limited gems. I'd love to have used more libraries and gems to make a robust web app. 
+  My goal was to write clean/simple code to complete each of the checkpoints asked for by the assessment (occam's razor). (Most of the application is built using basic rails with limited gems. Postgresql db deployed on Heroku. I'd love to have used more libraries and gems to make a robust web app. 
   
 ### Any challenges you faced
   Challenge #1. Looking at the prompt I initially only created one model to keep things simple, which was VandelayContact. However, I realized that the best way to combine records and append to the master record (latest update-date) would be to create a new Number and Address Model. I kept them separate because I thought it may be best for sustainability. Each Model belongs to an instance of VandelayContact. 
@@ -26,7 +26,7 @@ Thanks for the opportunity to build this! I almost wished I had more time to com
 ### Next steps to finish the challenge
   If I had all the time in the world there would be a lot of cool features I'd love to work on!
   
-  ##### Maine step I'd do next: 
+  ##### Main step I'd do next: 
   - I would like to be more strategic and think through where all the functions should be. With the goal to make my code very easy for team members to look at and understand exactly why I did things and make the import faster. I'd also like to have included detailed comments. I don't think my vc controller is "too big" but it does hold most of my code. I started to move them to service objects but decided this works for a project of this scope and I wanted to save time. 
   
   ##### Other features I'd do next: 
@@ -47,8 +47,6 @@ Thanks for the opportunity to build this! I almost wished I had more time to com
 ### JSON Output from the 3 samples that you ingest
   Link to access the validated / merged contacts below. 
   https://verisyscode.herokuapp.com/vandelay_contacts.json
-
-
 
 
 ## Instructions to run locally below:
