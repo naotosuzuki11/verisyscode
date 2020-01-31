@@ -1,6 +1,6 @@
 To the Verisys team, 
 
-My apologizies for not using the latest version of Rails or Ruby. My personal macbook's monitor is being fixed so I borrowed a friend's computer to complete this assessment. I did deploy the application to make testing the site as easy as possible for your team. https://verisyscode.herokuapp.com/. By the time I noticed that it wasn't up to date I was nearly done. I wish I could have used .upsert though!
+https://verisyscode.herokuapp.com/
 
 The [View page](https://verisyscode.herokuapp.com/review) should be empty the first time the site is accessed. I have tested the application using the templates sent to me. 
 
@@ -33,7 +33,9 @@ Thanks for the opportunity to build this! I almost wished I had more time to com
   - not require a template and set the db up to read any fields. 
   - download a template copy on the upload page. 
   - redo the entire front end. Use next or react.
-  - create logging in so multiple users can use the app and have security but also the ability to share. 
+  - devise - create logging in so multiple users can use the app and have security but also the ability to share
+  - simple form to log new entries without csv import
+  - pundit could be fun to add if the app was more comprehensive and had different types of users
   - write tests 
   - complete "docker-izing" 
   - include a searchbar
